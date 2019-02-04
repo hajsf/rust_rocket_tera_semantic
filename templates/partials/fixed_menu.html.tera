@@ -1,0 +1,47 @@
+{# <html> #}
+<div class="ui fixed inverted menu" style="z-index: 1;">
+  <a class="view-ui item">
+    <i class="sidebar icon" id='mtoggle'></i>
+  </a>
+  <div class="menu right" id="context"></div>
+  <script>
+/*      var div = document.createElement("div");
+      div.innerHTML= `
+      <button id='login'>Log in</button>
+      `;
+      context.appendChild(div);
+*/
+  var scr = document.createElement("script");
+  scr.innerHTML= `
+  /*  $('#login').click(function() {
+      while (context.hasChildNodes()) {
+        context.removeChild(context.lastChild);
+      }
+      var div = document.createElement("div");
+      div.innerHTML= "<button id='logout'>Log out</button>";
+      context.appendChild(div);
+  */
+      $("a.item").click(function() {
+         $("#vm").toggle();
+      });
+
+/*
+    $('#logout').click(function() {
+      while (context.hasChildNodes()) {
+        context.removeChild(context.lastChild);
+      }
+      var div = document.createElement("div");
+      div.innerHTML= "<button id='login'>Log in</button>";
+      context.appendChild(div);
+      $("a.item").click(function() {
+         $("#vm").toggle();
+      });
+    });
+
+    });
+*/
+  `;
+  document.head.appendChild(scr);
+  </script>
+</div>
+{# </html> #}

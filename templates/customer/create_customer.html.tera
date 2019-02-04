@@ -1,0 +1,7 @@
+{# <html> #}{% extends "base" %}
+
+{% block content %}
+     <h1>Hi there.</h1>
+    create new customer here
+{% endblock content %}
+{# </html> #}

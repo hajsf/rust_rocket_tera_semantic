@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>My App</title>
+    {% include "resources/styles_linking" %}
+    {% include "resources/scripts_linking" %}
+
+    {% include "resources/styles" %}
+</head>
+<body>
+  {% include "partials/fixed_menu" %}
+  {% include "partials/side_menu" %}
+  <div class='ui container'>
+  {% block content %}{% endblock content %}
+  </div>
+  {% include "resources/scripts" %}
+</body>
+</html>

@@ -1,0 +1,11 @@
+{# <html> #}
+<div class="ui vertical menu" id='vm' style="display: none; position: absolute; z-index: 2;">
+  {% include "partials/side_menu/customer_profile" %}
+  {% include "partials/side_menu/services" %}
+  {% include "partials/side_menu/material" %}
+  {% include "partials/side_menu/labour" %}
+  {% include "partials/side_menu/work_orders" %}
+  {% include "partials/side_menu/invoicing" %}
+  {% include "partials/side_menu/purchasing" %}
+</div>
+{# </html> #}

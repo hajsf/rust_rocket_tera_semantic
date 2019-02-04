@@ -1,0 +1,294 @@
+{# <html> #}{% extends "base" %}
+
+{% block content %}
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/static/semantic/dist/components/form.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/static/semantic/dist/components/message.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/static/semantic/dist/components/input.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/static/semantic/dist/components/label.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/static/semantic/dist/components/button.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/static/semantic/dist/components/table.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/static/semantic/dist/components/dropdown.css">
+  <script type="text/javascript" src="http://localhost:8000/static/semantic/dist/components/dropdown.js"></script>
+
+    <div class="ui error message">
+      <i class="close icon"></i>
+      <div class="header">
+        The page at {{ path }} does not exist!
+      </div>
+      <ul class="list">
+        <li>Make sure the path is correct.</li>
+        <li>Make sure you are connected to the server, and internet if required.</li>
+      </ul>
+      <script>
+      $('.message .close')
+        .on('click', function() {
+          $(this)
+            .closest('.message')
+            .transition('fade')
+          ;
+        })
+      ;
+      </script>
+    </div>
+
+    {% if path == '/1' %}
+        <h2>One</h2>
+    {% else %}
+       <h2>not One</h2>
+    {% endif %}
+
+
+    <div class="ui right labeled input">
+      <input type="text" placeholder="Enter weight..">
+      <div class="ui basic label">
+        kg
+      </div>
+    </div>
+    <div class="ui tag labels">
+  <a class="ui label">
+    $10.00
+  </a>
+  <a class="ui label">
+    $19.99
+  </a>
+  <a class="ui label">
+    $24.99
+  </a>
+  <a class="ui label">
+    $30.99
+  </a>
+  <a class="ui label">
+    $10.25
+  </a>
+</div>
+
+    <div class="ui right labeled input">
+      <label class="ui label" for="amount">SAR</label>
+      <input id="amount" type="text" placeholder="Amount">
+      <div class="ui basic label">.00</div>
+  </div>
+
+  <div class="ui small basic icon buttons">
+    <button class="ui button"><i class="file icon"></i></button>
+    <button class="ui button"><i class="save icon"></i></button>
+    <button class="ui button"><i class="upload icon"></i></button>
+    <button class="ui button"><i class="download icon"></i></button>
+    <script>
+    $('.file')
+      .on('click', function() {
+        alert('hi')
+        ;
+      })
+    ;
+    </script>
+  </div>
+
+
+  <div class="ui form">
+<div class="fields">
+    <div class="field">
+      <label>First name</label>
+      <input type="text" placeholder="First Name">
+    </div>
+    <div class="field">
+      <label>Middle name</label>
+      <input type="text" placeholder="Middle Name">
+    </div>
+    <div class="field">
+      <label>Last name</label>
+      <input type="text" placeholder="Last Name">
+    </div>
+  </div>
+</div>
+
+
+<table class="ui compact celled definition table" id="orders">
+  <thead class="full-width">
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Registration Date</th>
+      <th>E-mail address</th>
+      <th>Premium Plan</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="collapsing">
+        <i class="icon minus" onclick=remove($(this))></i>
+      </td>
+      <td>
+      <a class="ui tag label">
+        SAR10.00
+      </a></td>
+      <td contenteditable="true">100<i class="tags icon"></i> </td>
+      <td contenteditable="true">
+
+
+
+    <div class="ui selection dropdown">
+        <input name="gender" type="hidden">
+        <i class="dropdown icon"></i>
+        <div class="default text">Category</div>
+        <div class="menu">
+            <div class="item" data-value="1">Service</div>
+            <div class="item" data-value="0">Material</div>
+            <script>
+            $('.dropdown')
+              .dropdown()
+            ;
+            </script>
+        </div>
+    </div>
+
+      </td>
+      <td contenteditable="true"></td>
+      <td class="collapsing">
+        <i class="icon add" onclick=add($(this))></i>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot class="full-width">
+    <tr>
+      <th></th>
+      <th colspan="4">
+        <div class="ui right floated small primary labeled icon button">
+          <i class="user icon"></i> Add User
+          <script>
+          remove = function(e) {
+            var didConfirm = confirm("Are you sure You want to delete");
+              if (didConfirm == true) {
+              e
+                .closest('tr').remove()
+              //  .transition('fade')
+            }
+          }
+      //    $('.minus')
+      //      .on('click', function(){
+      //        var didConfirm = confirm("Are you sure You want to delete");
+    //            if (didConfirm == true) {
+    //            $(this)
+    //              .closest('tr')
+    //              .transition('fade')
+    //          }
+    //        });
+
+            add = function(e) {
+                  e
+                    .closest('tr')
+                    .after(`
+                      <tr>
+                        <td class="collapsing">
+                          <i class="icon minus" onclick=remove($(this))></i>
+                        </td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td class="collapsing">
+                          <i class="icon add" onclick=add($(this))></i>
+                        </td>
+                      </tr>
+                      `)
+              };
+
+          $('.user')
+            .on('click', function() {
+            // ADD ROWS TO THE TABLE.
+          //  $('table  > tbody tr:last').after()
+          $('table  > tbody')
+            .append(`
+                  <tr>
+                    <td class="collapsing">
+                      <i class="icon minus" onclick=remove($(this))></i>
+                    </td>
+                    <td  contenteditable="true"></td>
+                    <td  contenteditable="true"></td>
+                    <td  contenteditable="true"></td>
+                    <td  contenteditable="true"></td>
+                    <td class="collapsing">
+                      <i class="icon add" onclick=add($(this))></i>
+                    </td>
+                  </tr>
+                  `)
+              ;
+            })
+          ;
+          </script>
+        </div>
+
+        <div class="ui left action input">
+  <button class="ui teal labeled icon button" id="checkout">
+    <i class="cart icon"></i>
+    Checkout
+  </button>
+  <div class="ui disabled input">
+  <input type="text" id="total_value">
+  </div>
+  <script>
+  $("#checkout").on("click", function(){
+    var data = [];
+    $("#orders").find('tbody').find('tr').each(function (rowIndex, r) {
+        var cols = [];
+        $(this).find('th,td').each(function (colIndex, c) {
+            cols.push(c.textContent);
+        });
+        data.push(cols);
+    });
+    var total = Number(0);
+    data.forEach(function (item, index){
+      total += Number(item[2]);
+    })
+    $("#total_value").val("SAR "+total);
+  })
+  </script>
+  </div>
+
+        <div class="ui small  button" onclick=getTableData($(orders))>
+          Approve
+          <script>
+          $("#myTextBox").on("change paste keyup", function() {
+              alert($(this).val());
+          });
+
+          function getTableData(table) {
+              var data = [];
+          //      var x = table.find('tbody').find('tr').length;
+          //     for (var rowIndex = 0; x; rowIndex++) {
+          //       var columnIndex = 0;
+            //     $('#orders tr').eq(rowIndex).find('td').eq(columnIndex).html(Number(rowIndex)+1);
+            //    $("#orders tr td:first-child").html(Number(i)+1);
+          //    table.find('tbody').find('tr')[i].find('td')[0].innerHTML = Number(i)+1;
+              //  console.log(table.find('tbody').find('tr'));
+          //      console.log(i)
+          //    }
+
+
+
+
+          //  console.log(x)
+              table.find('tbody').find('tr').each(function (rowIndex, r) {
+                   $("#orders > tbody > tr:eq(rowIndex) td:first-child").html(Number(rowIndex)+1);
+                  var cols = [];
+                  $(this).find('th,td').each(function (colIndex, c) {
+                      cols.push(c.textContent);
+                  });
+                  data.push(cols);
+              });
+              console.log(data)
+            //  return data;
+
+        //    $("#orders tr td:first-child").html(`hi`);
+
+          }
+          </script>
+        </div>
+      </th>
+    </tr>
+  </tfoot>
+</table>
+
+
+{% endblock content %}
+{# </html> #}

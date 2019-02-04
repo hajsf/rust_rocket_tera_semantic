@@ -1,0 +1,7 @@
+{# <html> #}{% extends "base" %}
+{% block content %}
+
+    <h3>Welcome</h3>
+    <p>Welcome to the app, select your function/action from the side menu</p>
+{% endblock content %}
+{# </html> #}

@@ -1,0 +1,17 @@
+{# <html> #}
+<!--- Site CSS -->
+<link rel="stylesheet" href="http://localhost:8000/static/style.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8000/static/semantic/dist/components/reset.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8000/static/semantic/dist/components/site.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8000/static/semantic/dist/components/grid.css">
+
+<!--- Component CSS -->
+<link rel="stylesheet" type="text/css" href="http://localhost:8000/static/semantic/dist/components/menu.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8000/static/semantic/dist/components/input.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8000/static/semantic/dist/components/dropdown.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8000/static/semantic/dist/components/icon.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8000/static/semantic/dist/components/button.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8000/static/semantic/dist/components/transition.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8000/static/semantic/dist/components/popup.css">
+
+{# </html> #}

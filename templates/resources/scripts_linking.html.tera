@@ -1,0 +1,9 @@
+{# <html> #}
+<!--- Example Libs -->
+<script src="http://localhost:8000/static/semantic/assets/library/jquery.min.js"></script>
+
+<!--- Component JS -->
+<script type="text/javascript" src="http://localhost:8000/static/semantic/dist/components/transition.js"></script>
+<script type="text/javascript" src="http://localhost:8000/static/semantic/dist/components/dropdown.js"></script>
+
+{# </html> #}

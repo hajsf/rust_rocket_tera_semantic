@@ -1,0 +1,17 @@
+{# <html> #}
+<!--- Example CSS -->
+<style>
+body {
+  padding: 1em;
+}
+body > .ui.container {
+  margin-top: 3em;
+}
+.ui.menu {
+  margin: 3em 0em;
+}
+.ui.menu:last-child {
+  margin-bottom: 110px;
+}
+</style>
+{# </html> #}

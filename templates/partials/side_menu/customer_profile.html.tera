@@ -1,0 +1,12 @@
+{# <html> #}
+  <a class="item" href="/">Home</a>
+  <div class="item">
+    <b>Customer Profile</b>
+    <div class="menu">
+      <a class="item" href="/customer/create">New Customer</a>
+      <a class="active item" href="/customer/view">Find Customer</a>
+      <a class="item" href="/customer/edit">Update customer info</a>
+    </div>
+  </div>
+
+{# </html> #}

@@ -1,0 +1,32 @@
+{# <html> #}
+<script>
+$(document)
+  .ready(function() {
+    $('.ui.menu .ui.dropdown').dropdown({
+      on: 'hover'
+    });
+    $('.ui.menu a.item')
+      .on('click', function() {
+        $(this)
+          .addClass('active')
+          .siblings()
+          .removeClass('active')
+        ;
+      })
+    ;
+  })
+;
+</script>
+
+<script>
+// $('.ui .sidebar').toggle();
+
+// $("a.item").click(function() {
+//  $("#vm").toggle();
+// });
+
+$("div.div.item").click(function() {
+  $("#vm").toggle();
+});
+</script>
+{# </html> #}

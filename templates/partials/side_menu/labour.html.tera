@@ -1,0 +1,10 @@
+{# <html> #}
+<div class="ui dropdown item">
+  Labour <i class="dropdown icon"></i>
+  <div class="menu">
+    <a class="item" href="/work_order/create">Create new work order</a>
+    <a class="active item" href="/work_order/view">Find existing work order</a>
+    <a class="item" href="/work_order/edit">Update work order</a>
+  </div>
+</div>
+{# </html> #}

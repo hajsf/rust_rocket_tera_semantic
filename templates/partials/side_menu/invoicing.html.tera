@@ -1,0 +1,10 @@
+{# <html> #}
+<div class="ui dropdown item">
+  Invoicing <i class="dropdown icon"></i>
+  <div class="menu">
+    <a class="item" href="/invoice/create">Create invoice</a>
+    <a class="active item" href="/invoice/view">Find invoice</a>
+    <a class="item" href="/invoice/edit">Update existing invoice</a>
+  </div>
+</div>
+{# </html> #}
